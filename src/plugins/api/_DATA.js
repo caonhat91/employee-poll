@@ -138,6 +138,16 @@ export function _getUsers () {
   })
 }
 
+export function _login(userId, password) {
+  return new Promise((resolve, reject) => {
+    const user = users[userId];
+    if (!user || password !== user?.password) {
+      reject('username or password is incorrect');
+    }
+    setTimeout(() => resolve({...user}), 1000)
+  })
+}
+
 export function _getQuestions () {
   return new Promise((resolve) => {
     setTimeout(() => resolve({...questions}), 1000)

@@ -1,0 +1,9 @@
+.not-found {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    .title {
+        font-size: 8em;
+    }
+}

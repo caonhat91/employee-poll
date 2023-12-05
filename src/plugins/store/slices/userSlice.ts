@@ -39,7 +39,9 @@ export const login = createAsyncThunk<UserType, { username: string, password: st
 
 export const logout = createAsyncThunk<boolean, void>(
     'user/logout',
-    async () => true
+    async () => await new Promise((resolve) => {
+        setTimeout(() => resolve(true), 1000);
+    })
 );
 
 export default userSlice.reducer;

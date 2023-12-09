@@ -5,6 +5,7 @@ import { UserType, login } from "../../../plugins/store/slices/userSlice";
 import { getUserState } from "../../../plugins/store/reducers";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import css from "./SignIn.module.scss";
 
 export default function SingIn() {
     const dispatch = useDispatch();
@@ -28,9 +29,12 @@ export default function SingIn() {
     }, [user, navigate]);
 
     return (
-        <>
-            <LoginForm submit={handleSubmit} />
-            <UserList click={handleClick} />
-        </>
+        <div className={css['signin-page']}>
+            <div className={css['head']}>employee poll</div>
+            <div className={css['wrapper']}>
+                <LoginForm submit={handleSubmit} />
+                <UserList click={handleClick} />
+            </div>
+        </div>
     );
 }

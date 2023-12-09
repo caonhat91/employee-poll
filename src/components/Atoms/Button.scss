@@ -1,0 +1,46 @@
+input[type=submit],
+input[type=button],
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    gap: 8px;
+    width: 100px;
+    background: var(--bg-linear);
+    border-radius: 8px;
+    font-family: var(--font-inter);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--navy-blue);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    outline: 0;
+    border-width: 0;
+    border-color: transparent;
+
+    transition: 300ms;
+
+    cursor: pointer;
+
+    &:focus {
+        outline-color: transparent;
+        outline-style: solid;
+    }
+
+    &:focus,
+    &:hover {
+        box-shadow: 0 0 8px var(--navy-blue);
+    }
+
+    &:active {
+        box-shadow: inset 0px 0px 8px #189AB4;
+    }
+
+}

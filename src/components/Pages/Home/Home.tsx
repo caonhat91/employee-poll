@@ -1,3 +1,13 @@
+import PollShell from "../../Templates/PollShelf";
+
 export default function Home() {
-    return (<><h1>Home</h1></>);
+    const polls = [
+        
+    ];
+    return (
+        <main>
+            <PollShell headline="Poll Unanswered" polls={[]} />
+            <PollShell headline="Poll Answered" polls={[]} />
+        </main>
+    );
 }

@@ -1,4 +1,6 @@
 import { FormEvent, useState } from "react";
+import Button from "../Atoms/Button";
+import css from "./LoginForm.module.scss"
 
 export type LoginType = {
     username: string,
@@ -45,22 +47,25 @@ export default function LoginForm({ submit }: { submit: (_: LoginType) => void }
     }
 
     return (
-        <form noValidate autoComplete="false" onSubmit={handleSubmit}>
-            <label htmlFor="username">
-                Username:
-                <input type="text" name="username" id="username"
-                    value={frm.username}
-                    onChange={e => changeFrm(e.target.name, e.target.value)} />
-            </label>
-            {errors?.username && <p>{errors.username}</p>}
-            <label htmlFor="password">
-                Password:
-                <input type="password" name="password" id="password"
-                    value={frm.password}
-                    onChange={e => changeFrm(e.target.name, e.target.value)} />
-            </label>
-            {errors?.password && <p>{errors.password}</p>}
-            <button type="submit">Submit</button>
-        </form>
+        <div className={css['login-page']}>
+            <h1 className={css['h1']}>Login</h1>
+            <form className={css['form']} noValidate autoComplete="false" onSubmit={handleSubmit}>
+                <div className={css['control']}>
+                    <label htmlFor="username">Username:</label>
+                    <input type="text" name="username" id="username" className={errors?.username && css['invalid']} required
+                        value={frm.username} onChange={e => changeFrm(e.target.name, e.target.value)} onFocus={validateForm} onBlur={validateForm} />
+                    {errors?.username && <small className={css['error']}>{errors.username}</small>}
+                </div>
+                <div className={css['control']}>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" name="password" id="password" className={errors?.password && css['invalid']} required
+                        value={frm.password} onChange={e => changeFrm(e.target.name, e.target.value)} onFocus={validateForm} onBlur={validateForm} />
+                    {errors?.password && <small className={css['error']}>{errors.password}</small>}
+                </div>
+                <Button>
+                    <button type="submit">Submit</button>
+                </Button>
+            </form>
+        </div>
     );
 }

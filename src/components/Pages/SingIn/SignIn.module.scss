@@ -1,0 +1,56 @@
+.signin-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 100vw;
+        left: -50%;
+        top: calc(50% - 100vw/2);
+        border-radius: 50%;
+        background: linear-gradient(180deg, #D4F1F4 0%, #189AB4 100%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 90px;
+        bottom: 90px;
+        width: 250px;
+        height: 210px;
+        background: url('../../../../public//signin_pattern.png') no-repeat;
+        background-size: cover;
+    }
+
+    .head {
+        position: absolute;
+        left: 90px;
+        top: 90px;
+
+        width: 466px;
+        height: 372px;
+
+        font-family: 'Kaushan Script';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 128px;
+        line-height: 186px;
+        color: var(--blue-grotto);
+    }
+
+    .wrapper {
+        position: relative;
+        margin-left: 50vw;
+        width: 50vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-around;
+        flex-flow: column;
+    }
+}

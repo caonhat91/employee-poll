@@ -7,6 +7,7 @@ import "./Navigator.scss"
 import Popup from "../Molecules/Popup";
 import { createPortal } from "react-dom";
 import { useState } from "react";
+import AvatarGroup from "../Molecules/AvatarGroup";
 
 export default function Navigator() {
     const dispatch = useDispatch();
@@ -17,8 +18,7 @@ export default function Navigator() {
         <div className="navigator">
             <Nav className="wrapper-left" />
             <div className="wrapper-right" onClick={() => setIsOpen(!isOpen)}>
-                <Avatar img={user.avatarURL} alt={user.name} />
-                <h4>{user.name}</h4>
+                <AvatarGroup {...user} />
                 <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1L7.58579 7.58579C8.36684 8.36684 9.63317 8.36684 10.4142 7.58579L17 1" />
                 </svg>

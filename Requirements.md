@@ -38,7 +38,7 @@
 
 1. *Does the home page have the desired functionality?*
      - [x] The answered and unanswered polls are both available at the root.
-     - [ ] The user can alternate between viewing answered and unanswered polls.
+     - [x] The user can alternate between viewing answered and unanswered polls.
      - [x] The unanswered questions are shown by default.
      - [x] The name of the logged in user is visible on the page.
      - [x] The user can navigate to the leaderboard.
@@ -48,7 +48,7 @@
      - [x] A polling question links to details of that poll.
      - [x] The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
 3. *Are the details of each poll displayed with all of the relevant information?*
-     - [ ] The details of the poll are available at `questions/:question_id`
+     - [x] The details of the poll are available at `questions/:question_id`
      - [ ] When a poll is clicked on the home page, the following is shown:
        - [ ] the text “Would You Rather”
        - [ ] the avatar of the user who posted the polling question
@@ -66,17 +66,17 @@
      - [ ] When the user comes back to the home page, the polling question appears in the “Answered” column.
      - [ ] The voting mechanism works correctly, and the data on the leaderboard changes appropriately.
 5. *Can users add new polls?*
-     - [ ] The form is available at `/add`.
+     - [x] The form is available at `/add`.
      - [ ] The application shows the text “Would You Rather” and has a form for creating two options.
      - [ ] Upon submitting the form, a new poll is created and the user is taken to the home page.
      - [ ] The new polling question appears in the correct category on the home page.
 6. *Does the leaderboard work correctly and have the desired functionality?*
-     - [ ] The Leaderboard is available at `/leaderboard`.
-     - [ ] Each entry on the leaderboard contains the following:
-       - [ ] the user’s name;
-       - [ ] the user’s avatar;
-       - [ ] the number of questions the user asked;
-       - [ ] the number of questions the user answered
+     - [x] The Leaderboard is available at `/leaderboard`.
+     - [x] Each entry on the leaderboard contains the following:
+       - [x] the user’s name;
+       - [x] the user’s avatar;
+       - [x] the number of questions the user asked;
+       - [x] the number of questions the user answered
      - [ ] Users are ordered in descending order based on the sum of the number of questions they’ve answered and the number of questions they’ve asked.
 7. *Is the application navigable?*
      - [x] The app contains a navigation bar that is visible on all of the pages.

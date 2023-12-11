@@ -22,7 +22,7 @@ export default function App() {
           </Suspense>
         }
       />
-      <Route path='/' element={
+      <Route path='/' id='root' element={
         <Auth><Layout /></Auth>
       }>
         <Route index

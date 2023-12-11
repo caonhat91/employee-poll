@@ -1,11 +1,35 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../plugins/store/slices/userSlice";
+import Avatar from "../Atoms/Avatar";
+import { getUser } from "../../plugins/store/reducers";
+import Nav from "../Molecules/Nav";
+import "./Navigator.scss"
+import Popup from "../Molecules/Popup";
+import { createPortal } from "react-dom";
+import { useState } from "react";
 
 export default function Navigator() {
     const dispatch = useDispatch();
+    const user = useSelector(getUser);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
     return (
-        <>
-            <button type="button" onClick={() => dispatch(logout() as any)}>Logout</button>
-        </>
+        <div className="navigator">
+            <Nav className="wrapper-left" />
+            <div className="wrapper-right" onClick={() => setIsOpen(!isOpen)}>
+                <Avatar img={user.avatarURL} alt={user.name} />
+                <h4>{user.name}</h4>
+                <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L7.58579 7.58579C8.36684 8.36684 9.63317 8.36684 10.4142 7.58579L17 1" />
+                </svg>
+            </div>
+            {isOpen && createPortal(
+                <Popup className={isOpen ? 'open' : ''} menus={[{
+                    text: "Sign Out",
+                    onDispatch: () => dispatch(logout() as any)
+                }]} />,
+                document.body
+            )}
+        </div>
     );
 }

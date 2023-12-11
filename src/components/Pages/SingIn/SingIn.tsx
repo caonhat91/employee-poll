@@ -2,14 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import UserList from "../../Molecules/UserList";
 import LoginForm, { LoginType } from "../../Organisms/LoginForm";
 import { UserType, login } from "../../../plugins/store/slices/userSlice";
-import { getUserState } from "../../../plugins/store/reducers";
+import { getUser } from "../../../plugins/store/reducers";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import css from "./SignIn.module.scss";
 
 export default function SingIn() {
     const dispatch = useDispatch();
-    const user = useSelector(getUserState);
+    const user = useSelector(getUser);
     const navigate = useNavigate();
 
     const handleSubmit = (frm: LoginType) => {

@@ -1,0 +1,22 @@
+.home-page {
+    position: relative;
+
+    .cycle {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background: linear-gradient(180deg, #D4F1F4 0%, #FFFFFF 100%);
+        filter: blur(60px);
+
+        &--right {
+            right: 0;
+            top: 100px;
+            transform: rotate(-20deg);
+        }
+
+        &--left {
+            left: -51px;
+            top: 560px;
+        }
+    }
+}

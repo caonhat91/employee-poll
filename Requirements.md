@@ -37,16 +37,16 @@
 ### Application Functionality
 
 1. *Does the home page have the desired functionality?*
-     - [ ] The answered and unanswered polls are both available at the root.
+     - [x] The answered and unanswered polls are both available at the root.
      - [ ] The user can alternate between viewing answered and unanswered polls.
-     - [ ] The unanswered questions are shown by default.
-     - [ ] The name of the logged in user is visible on the page.
-     - [ ] The user can navigate to the leaderboard.
-     - [ ] The user can navigate to the form that allows the user to create a new poll.
+     - [x] The unanswered questions are shown by default.
+     - [x] The name of the logged in user is visible on the page.
+     - [x] The user can navigate to the leaderboard.
+     - [x] The user can navigate to the form that allows the user to create a new poll.
 2. *Are the polling questions listed in the correct category (Unanswered vs Answered), and do they have the desired functionality on the home page?*
-     - [ ] Each polling question resides in the correct category. For example, if a question hasn’t been answered by the current user, it should be in the “Unanswered” category.
-     - [ ] A polling question links to details of that poll.
-     - [ ] The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
+     - [x] Each polling question resides in the correct category. For example, if a question hasn’t been answered by the current user, it should be in the “Unanswered” category.
+     - [x] A polling question links to details of that poll.
+     - [x] The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
 3. *Are the details of each poll displayed with all of the relevant information?*
      - [ ] The details of the poll are available at `questions/:question_id`
      - [ ] When a poll is clicked on the home page, the following is shown:
@@ -79,8 +79,8 @@
        - [ ] the number of questions the user answered
      - [ ] Users are ordered in descending order based on the sum of the number of questions they’ve answered and the number of questions they’ve asked.
 7. *Is the application navigable?*
-     - [ ] The app contains a navigation bar that is visible on all of the pages.
-     - [ ] The user can navigate between the page for creating new polls, and the leaderboard page, and the home page without typing the address into the address bar.
+     - [x] The app contains a navigation bar that is visible on all of the pages.
+     - [x] The user can navigate between the page for creating new polls, and the leaderboard page, and the home page without typing the address into the address bar.
 8. *Does the application interact with the backend correctly?*
      - [ ] The data that’s initially displayed is populated correctly from the backend.
      - [ ] Each user’s answer and each new poll is correctly recorded on the backend.
@@ -91,12 +91,12 @@
 ### Architecture
 
 1. *Does the store serve as the application’s single source of truth?*
-   - [ ] The store is the application’s source of truth.
+   - [x] The store is the application’s source of truth.
    - [ ] Components read the necessary state from the store; they do not have their own versions of the same state.
    - [ ] There are no direct API calls in the components' lifecycle methods.
 2. *Is application state managed by Redux?*
    - [ ] Most application state is managed by the Redux store. State-based props are mapped from the store rather than stored as component state.
-   - [ ] Form inputs and controlled components may have some state handled by the component.
+   - [x] Form inputs and controlled components may have some state handled by the component.
 3. *Does application state update correctly?*
    - [ ] Updates are triggered by dispatching action creators to reducers.
    - [ ] Reducers and actions are written properly and correctly return updated state to the store.

@@ -160,11 +160,12 @@ export function _getQuestions () {
   })
 }
 
-function formatQuestion ({ optionOneText, optionTwoText, author }) {
+function formatQuestion ({ optionOneText, optionTwoText, author, title }) {
   return {
     id: generateUID(),
     timestamp: Date.now(),
     author,
+    title,
     optionOne: {
       votes: [],
       text: optionOneText,
@@ -180,6 +181,10 @@ export function _saveQuestion (question) {
   return new Promise((resolve, reject) => {
     if (!question.optionOneText || !question.optionTwoText || !question.author) {
       reject("Please provide optionOneText, optionTwoText, and author");
+    }
+
+    if (!question.title) {
+      question.title = 'Would You Rather';
     }
 
     const formattedQuestion = formatQuestion(question)

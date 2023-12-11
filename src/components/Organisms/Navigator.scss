@@ -1,0 +1,29 @@
+.navigator {
+    position: sticky;
+    top: 0;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.3);
+    border-bottom: 0.25px solid var(--blue-grotto);
+    box-shadow: 0px 0px 4px var(--blue-grotto);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: 1;
+
+    .wrapper-right {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+
+        svg {
+            stroke: var(--navy-blue);
+            stroke-width: "2";
+            stroke-linecap: round;
+        }
+    }
+}

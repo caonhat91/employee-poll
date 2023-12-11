@@ -58,6 +58,7 @@ export function createQuestion(newQuestion: NewQuestion) {
     return function (dispatch: any) {
         _saveQuestion(newQuestion).then(() => {
             dispatch(fetchQuestions());
+            dispatch(fetchUsers());
         });
     }
 }
@@ -70,7 +71,5 @@ export function answerQuestion(answerQuestion: AnswerQuestion) {
         });
     }
 }
-
-export const { } = usersSlice.selectors;
 
 export default usersSlice.reducer;

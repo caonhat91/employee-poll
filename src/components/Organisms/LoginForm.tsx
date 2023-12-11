@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import Button from "../Atoms/Button";
-import css from "./LoginForm.module.scss"
+import "./LoginForm.scss";
 
 export type LoginType = {
     username: string,
@@ -47,20 +47,20 @@ export default function LoginForm({ submit }: { submit: (_: LoginType) => void }
     }
 
     return (
-        <div className={css['login-page']}>
-            <h1 className={css['h1']}>Login</h1>
-            <form className={css['form']} noValidate autoComplete="false" onSubmit={handleSubmit}>
-                <div className={css['control']}>
+        <div className="login-page">
+            <h1 className="h1">Login</h1>
+            <form className="form" noValidate autoComplete="false" onSubmit={handleSubmit}>
+                <div className="control">
                     <label htmlFor="username">Username:</label>
-                    <input type="text" name="username" id="username" className={errors?.username && css['invalid']} required
+                    <input type="text" name="username" id="username" className={errors?.username && "invalid"} required
                         value={frm.username} onChange={e => changeFrm(e.target.name, e.target.value)} onFocus={validateForm} onBlur={validateForm} />
-                    {errors?.username && <small className={css['error']}>{errors.username}</small>}
+                    {errors?.username && <small className="error">{errors.username}</small>}
                 </div>
-                <div className={css['control']}>
+                <div className="control">
                     <label htmlFor="password">Password:</label>
-                    <input type="password" name="password" id="password" className={errors?.password && css['invalid']} required
+                    <input type="password" name="password" id="password" className={errors?.password && "invalid"} required
                         value={frm.password} onChange={e => changeFrm(e.target.name, e.target.value)} onFocus={validateForm} onBlur={validateForm} />
-                    {errors?.password && <small className={css['error']}>{errors.password}</small>}
+                    {errors?.password && <small className="error">{errors.password}</small>}
                 </div>
                 <Button>
                     <button type="submit">Submit</button>

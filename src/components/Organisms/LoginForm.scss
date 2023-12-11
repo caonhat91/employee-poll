@@ -1,0 +1,89 @@
+.login-page {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    gap: 64px;
+
+    .h1 {
+        width: 332px;
+        height: 42px;
+
+        /* H1 */
+        font-family: var(--font-inter);
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 39px;
+
+        text-align: center;
+
+        /* Linear Grotto Baby */
+        background: linear-gradient(180deg, var(--baby-blue) 20%, var(--blue-grotto) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+
+    button,
+    input[type=submit] {
+        margin: 0 auto;
+    }
+
+    .control {
+        display: flex;
+        flex-flow: column;
+        gap: 8px;
+        min-height: 77px;
+
+        label {
+            font-size: 0.9em;
+        }
+
+        input {
+            padding: 0.25rem 0.75rem;
+            min-width: 280px;
+            background: var(--white);
+            border-radius: 0.25rem;
+            border: 1px solid;
+            border-color: var(--navy-blue);
+
+            font-size: 1em;
+            color: var(--navy-blue);
+
+            transition: 300ms;
+
+            &:focus {
+                outline: 0;
+                border-color: var(--navy-blue);
+                box-shadow: 0px 0px 12px var(--blue-grotto);
+            }
+
+            &.invalid:invalid {
+                border-color: var(--red);
+                box-shadow: 0px 0px 12px var(--red);
+            }
+        }
+
+        .error {
+            color: var(--red);
+            animation: fade 300ms linear;
+
+            @keyframes fade {
+                0% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

@@ -67,9 +67,9 @@
      - [ ] The voting mechanism works correctly, and the data on the leaderboard changes appropriately.
 5. *Can users add new polls?*
      - [x] The form is available at `/add`.
-     - [ ] The application shows the text “Would You Rather” and has a form for creating two options.
-     - [ ] Upon submitting the form, a new poll is created and the user is taken to the home page.
-     - [ ] The new polling question appears in the correct category on the home page.
+     - [x] The application shows the text “Would You Rather” and has a form for creating two options.
+     - [x] Upon submitting the form, a new poll is created and the user is taken to the home page.
+     - [x] The new polling question appears in the correct category on the home page.
 6. *Does the leaderboard work correctly and have the desired functionality?*
      - [x] The Leaderboard is available at `/leaderboard`.
      - [x] Each entry on the leaderboard contains the following:

@@ -23,7 +23,9 @@ export default function Leaderboard() {
             </tr>;
         });
 
-    return (<div className="leaderboard-page">
-        <Table thead={thead} tbody={tbody} />
-    </div>);
+    return (
+        <div className="leaderboard-page">
+            <Table thead={thead} tbody={tbody} />
+        </div>
+    );
 }

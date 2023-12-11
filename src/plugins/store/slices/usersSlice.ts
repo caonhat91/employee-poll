@@ -1,14 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { _getUsers } from '../../api/_DATA';
-import { UserType } from './userSlice';
+import { User } from './userSlice';
 
-export type UsersType = {
-    [key: string]: UserType
+export type Users = {
+    [key: string]: User
 }
 
 const usersSlice = createSlice({
     name: 'users',
-    initialState: {} as UsersType,
+    initialState: {} as Users,
     reducers: {},
     extraReducers(builder) {
         builder.addCase(fetchUsers.fulfilled, (state, action) => {

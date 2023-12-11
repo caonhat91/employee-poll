@@ -49,20 +49,20 @@
      - [x] The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
 3. *Are the details of each poll displayed with all of the relevant information?*
      - [x] The details of the poll are available at `questions/:question_id`
-     - [ ] When a poll is clicked on the home page, the following is shown:
-       - [ ] the text “Would You Rather”
-       - [ ] the avatar of the user who posted the polling question
-       - [ ] the two options
-     - [ ] For answered polls, each of the two options contains the following:
-       - [ ] the text of the option;
-       - [ ] the number of people who voted for that option;
-       - [ ] the percentage of people who voted for that option;
+     - [x] When a poll is clicked on the home page, the following is shown:
+       - [x] the text “Would You Rather”
+       - [x] the avatar of the user who posted the polling question
+       - [x] the two options
+     - [x] For answered polls, each of the two options contains the following:
+       - [x] the text of the option;
+       - [x] the number of people who voted for that option;
+       - [x] the percentage of people who voted for that option;
      - [ ] The option selected by the logged in user should be clearly marked.
      - [ ] When the user is logged in, the details of the poll are shown. If the user is logged out, he/she is asked to log in before before being able to access the poll.
      - [ ] The application asks the user to sign in and shows a 404 page if that poll does not exist. (In other words, if a user creates a poll and then the same or another user tries to access that poll by its url, the user should be asked to sign in and then be shown a 404 page. Please keep in mind that new polls will not be accessible at their url because of the way the backend is set up in this application.)
 4. *Does the voting mechanism work correctly?*
-     - [ ] Upon voting in a poll, all of the information of the answered poll is displayed.
-     - [ ] The user’s response is recorded and is clearly visible on the poll details page.
+     - [x] Upon voting in a poll, all of the information of the answered poll is displayed.
+     - [x] The user’s response is recorded and is clearly visible on the poll details page.
      - [ ] When the user comes back to the home page, the polling question appears in the “Answered” column.
      - [ ] The voting mechanism works correctly, and the data on the leaderboard changes appropriately.
 5. *Can users add new polls?*
@@ -77,15 +77,15 @@
        - [x] the user’s avatar;
        - [x] the number of questions the user asked;
        - [x] the number of questions the user answered
-     - [ ] Users are ordered in descending order based on the sum of the number of questions they’ve answered and the number of questions they’ve asked.
+     - [x] Users are ordered in descending order based on the sum of the number of questions they’ve answered and the number of questions they’ve asked.
 7. *Is the application navigable?*
      - [x] The app contains a navigation bar that is visible on all of the pages.
      - [x] The user can navigate between the page for creating new polls, and the leaderboard page, and the home page without typing the address into the address bar.
 8. *Does the application interact with the backend correctly?*
-     - [ ] The data that’s initially displayed is populated correctly from the backend.
-     - [ ] Each user’s answer and each new poll is correctly recorded on the backend.
+     - [x] The data that’s initially displayed is populated correctly from the backend.
+     - [x] Each user’s answer and each new poll is correctly recorded on the backend.
 9. *Does the code run without errors? Is the code free of warnings that resulted from not following the best practices listed in the documentation, such as using `key` for list items? Is the code formatted properly?*
-     - [ ] The code runs without errors. There are no warnings that resulted from not following the best practices listed in the documentation, such as using key for list items. All code is functional and formatted properly.
+     - [x] The code runs without errors. There are no warnings that resulted from not following the best practices listed in the documentation, such as using key for list items. All code is functional and formatted properly.
 
 
 ### Architecture
@@ -109,11 +109,11 @@
 
 1. *Are jest, `@testing-library/react`, and `@testing-library/jest-dom` present in the project?*
    - The package.json file should include the following under devDependencies:
-     - [ ] `jest`
-     - [ ] `@testing-library/react`
-     - [ ] `@testing-library/jest-dom`
+     - [x] `jest`
+     - [x] `@testing-library/react`
+     - [x] `@testing-library/jest-dom`
 2. *Can all the unit test be run by entering the `npm start test` command?*
-   - [ ] The application requires only npm start test in order to run all the unit tests in the project.
+   - [x] The application requires only npm start test in order to run all the unit tests in the project.
 3. *Do all the unit tests pass?*
    - [ ] After running npm start test, all unit tests should pass. There should be no failing tests.
 4. *Are there at least 10 unit tests?*

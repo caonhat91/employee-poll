@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { _login } from '../../api/_DATA';
 
-export type UserType = {
+export type User = {
     id: string,
     password: string,
     name: string,
@@ -14,7 +14,7 @@ export type UserType = {
 
 const userSlice = createSlice({
     name: 'user',
-    initialState: {} as UserType,
+    initialState: {} as User,
     reducers: {},
     extraReducers(builder) {
         builder
@@ -23,13 +23,13 @@ const userSlice = createSlice({
             })
             .addCase(logout.fulfilled, (state, action) => {
                 if (action.payload) {
-                    return {} as UserType;
+                    return {} as User;
                 }
             })
     },
 });;
 
-export const login = createAsyncThunk<UserType, { username: string, password: string }>(
+export const login = createAsyncThunk<User, { username: string, password: string }>(
     'user/login',
     async ({ username, password }) => {
         const user = await _login(username, password);

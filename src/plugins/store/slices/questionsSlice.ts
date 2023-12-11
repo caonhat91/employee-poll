@@ -21,14 +21,9 @@ export type Questions = {
     [key: string]: Question
 }
 
-const usersSlice = createSlice({
+const questionsSlice = createSlice({
     name: 'questions',
     initialState: {} as Questions,
-    selectors: {
-        unanswered(state: Questions) {
-            return state;
-        }
-    },
     reducers: {},
     extraReducers(builder) {
         builder.addCase(fetchQuestions.fulfilled, (state, action) => {
@@ -72,4 +67,4 @@ export function answerQuestion(answerQuestion: AnswerQuestion) {
     }
 }
 
-export default usersSlice.reducer;
+export default questionsSlice.reducer;

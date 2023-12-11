@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import UserList from "../../Molecules/UserList";
 import LoginForm, { LoginType } from "../../Organisms/LoginForm";
-import { UserType, login } from "../../../plugins/store/slices/userSlice";
+import { User, login } from "../../../plugins/store/slices/userSlice";
 import { getUser } from "../../../plugins/store/reducers";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,7 @@ export default function SingIn() {
         dispatch(login(frm) as any);
     }
 
-    const handleClick = (user: UserType) => {
+    const handleClick = (user: User) => {
         handleSubmit({ username: user.id, password: user.password });
     }
 

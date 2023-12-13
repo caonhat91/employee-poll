@@ -2,6 +2,7 @@ import { Question } from "../../plugins/store/slices/questionsSlice";
 import "./QuestionDetail.scss";
 
 type QuestionDetailOptions = {
+    userId: string,
     question: Question;
     isAnswer: boolean;
     totalUser: number;
@@ -9,7 +10,7 @@ type QuestionDetailOptions = {
 };
 
 export default function QuestionDetail(
-    { question, isAnswer, totalUser, onChoose }: QuestionDetailOptions
+    { userId, question, isAnswer, totalUser, onChoose }: QuestionDetailOptions
 ) {
 
     const unanswered = (key: string) => (
@@ -40,7 +41,7 @@ export default function QuestionDetail(
 
     const optionRender = ({ votes, text, key }: { votes: string[], text: string, key: string }) => {
         return (
-            <div className="option">
+            <div className={"option " + (votes.includes(userId) ? "choosed" : "")}>
                 <p className="text">{text}</p>
                 <div className="sperator"></div>
                 {isAnswer ? answered(votes) : unanswered(key)}

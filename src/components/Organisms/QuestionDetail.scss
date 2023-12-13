@@ -19,7 +19,7 @@
             border-radius: 0.5rem;
             text-align: center;
 
-            &:hover {
+            &:hover, &.choosed {
                 box-shadow: 0 0 8px var(--blue-grotto);
             }
 

@@ -57,7 +57,7 @@
        - [x] the text of the option;
        - [x] the number of people who voted for that option;
        - [x] the percentage of people who voted for that option;
-     - [ ] The option selected by the logged in user should be clearly marked.
+     - [x] The option selected by the logged in user should be clearly marked.
      - [ ] When the user is logged in, the details of the poll are shown. If the user is logged out, he/she is asked to log in before before being able to access the poll.
      - [ ] The application asks the user to sign in and shows a 404 page if that poll does not exist. (In other words, if a user creates a poll and then the same or another user tries to access that poll by its url, the user should be asked to sign in and then be shown a 404 page. Please keep in mind that new polls will not be accessible at their url because of the way the backend is set up in this application.)
 4. *Does the voting mechanism work correctly?*
@@ -119,27 +119,27 @@
 4. *Are there at least 10 unit tests?*
    - The project requires a minimum of 10 passing unit tests.
      - You will also be expected to write at least ten unit tests for the project. The first six should be the following:
-       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestion` to verify that the saved question is returned and all expected fields are populated when correctly formatted data is passed to the function.
-       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestion` to verify that an error is returned if incorrect data is passed to the function.
-       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestionAnswer` to verify that the saved question answer is returned and all expected fields are populated when correctly formatted data is passed to the function.
-       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestionAnswer` to verify that an error is returned if incorrect data is passed to the function.
-       - [ ] Write a snapshot test for at least one file.
-       - [ ] Write a DOM test for at least one file which uses the fireEvent function. For example use `fireEvent.click()` for clicking a button and verifying that something changed in a component or `fireEvent.change()` to add text to an input field or select an option in a dropdown. After doing this, verify the UI changed in some way using the `expect()` method from jest.
+       - [x] For the `_DATA.js` file, write an async unit test for `_saveQuestion` to verify that the saved question is returned and all expected fields are populated when correctly formatted data is passed to the function.
+       - [x] For the `_DATA.js` file, write an async unit test for `_saveQuestion` to verify that an error is returned if incorrect data is passed to the function.
+       - [x] For the `_DATA.js` file, write an async unit test for `_saveQuestionAnswer` to verify that the saved question answer is returned and all expected fields are populated when correctly formatted data is passed to the function.
+       - [x] For the `_DATA.js` file, write an async unit test for `_saveQuestionAnswer` to verify that an error is returned if incorrect data is passed to the function.
+       - [x] Write a snapshot test for at least one file.
+       - [x] Write a DOM test for at least one file which uses the fireEvent function. For example use `fireEvent.click()` for clicking a button and verifying that something changed in a component or `fireEvent.change()` to add text to an input field or select an option in a dropdown. After doing this, verify the UI changed in some way using the `expect()` method from jest.
      - The remaining four unit tests can be to verify any function or component you are writing for this project. Here are some ideas:
-       - [ ] On the login page, verify that a user name field, password field, and submit button are present on the page.
-       - [ ] Verify that a user entering an incorrect username or password and clicking submit will see an error on the page.
-       - [ ] Verify that the leaderboard is displaying the correct user name, number of questions asked, and number of questions answered.
-       - [ ] For answered polls, verify that the percentage of people who voted for an option is calculated and displayed correctly.
-       - [ ] Verify the navigation bar displays all expected links.
+       - [x] On the login page, verify that a user name field, password field, and submit button are present on the page.
+       - [x] Verify that a user entering an incorrect username or password and clicking submit will see an error on the page.
+       - [x] Verify that the leaderboard is displaying the correct user name, number of questions asked, and number of questions answered.
+       - [x] For answered polls, verify that the percentage of people who voted for an option is calculated and displayed correctly.
+       - [x] Verify the navigation bar displays all expected links.
 5. *Are There two unit tests written which test the `_saveQuestion()` function in `_DATA.js`?*
    - The following two unit tests must be present for `_saveQuestion()`:
-     - [ ] An async unit test to verify that the saved question is returned and all expected fields are populated when correctly formatted data is passed to the function.
-     - [ ] An async unit test to verify that an error is returned if incorrect data is passed to the function.
+     - [x] An async unit test to verify that the saved question is returned and all expected fields are populated when correctly formatted data is passed to the function.
+     - [x] An async unit test to verify that an error is returned if incorrect data is passed to the function.
 6. *Are there two unit tests written which test the `_saveQuestionAnswer()` function in _DATA.js?*
    - The following two unit tests must be present for `_saveQuestionAnswer()`:
-     - [ ] An async unit test to verify that true is returned when correctly formatted data is passed to the function.
-     - [ ] An async unit test to verify that an error is returned if incorrect data is passed to the function.
+     - [x] An async unit test to verify that true is returned when correctly formatted data is passed to the function.
+     - [x] An async unit test to verify that an error is returned if incorrect data is passed to the function.
 7. *Is there at least one snapshot test present?*
-   - [ ] At least one test must call the `toMatchSnapshot()` function from jest. Doing this will generate a folder called snapshots where the snapshot will be stored.
+   - [x] At least one test must call the `toMatchSnapshot()` function from jest. Doing this will generate a folder called snapshots where the snapshot will be stored.
 8. *Is there is at least one DOM test which uses the fireEvent function?*
-   - [ ] At least one unit test must use the render method from `@testing-library/react` to render one of your React components. The unit test should then perform some actions on the component using fireEvent such as `fireEvent.click()` or `fireEvent.change()`. After calling fireEvent, call the `expect()` method from jest to verify that a change occurred in the UI after the event was fired.
+   - [x] At least one unit test must use the render method from `@testing-library/react` to render one of your React components. The unit test should then perform some actions on the component using fireEvent such as `fireEvent.click()` or `fireEvent.change()`. After calling fireEvent, call the `expect()` method from jest to verify that a change occurred in the UI after the event was fired.

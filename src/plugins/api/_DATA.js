@@ -140,7 +140,7 @@ function generateUID () {
 
 export function _getUsers () {
   return new Promise((resolve) => {
-    setTimeout(() => resolve({...users}), 1000)
+    setTimeout(() => resolve({...users}), 500)
   })
 }
 
@@ -149,14 +149,15 @@ export function _login(userId, password) {
     const user = users[userId];
     if (!user || password !== user?.password) {
       reject('username or password is incorrect');
+      return;
     }
-    setTimeout(() => resolve({...user}), 1000)
+    setTimeout(() => resolve({...user}), 500)
   })
 }
 
 export function _getQuestions () {
   return new Promise((resolve) => {
-    setTimeout(() => resolve({...questions}), 1000)
+    setTimeout(() => resolve({...questions}), 500)
   })
 }
 
@@ -181,6 +182,7 @@ export function _saveQuestion (question) {
   return new Promise((resolve, reject) => {
     if (!question.optionOneText || !question.optionTwoText || !question.author) {
       reject("Please provide optionOneText, optionTwoText, and author");
+      return;
     }
 
     if (!question.title) {
@@ -206,7 +208,7 @@ export function _saveQuestion (question) {
       }
 
       resolve(formattedQuestion)
-    }, 1000)
+    }, 500)
   })
 }
 
@@ -214,6 +216,7 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
   return new Promise((resolve, reject) => {
     if (!authedUser || !qid || !answer) {
       reject("Please provide authedUser, qid, and answer");
+      return;
     }
 
     setTimeout(() => {

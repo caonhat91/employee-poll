@@ -53,7 +53,7 @@ export default function PollDetail() {
                 <Avatar img={creator.avatarURL} alt={creator.name} size="128px" />
             </div>}
             {question &&
-                <QuestionDetail question={question} isAnswer={isAnswer}
+                <QuestionDetail question={question} isAnswer={isAnswer} userId={user.id}
                     totalUser={Object.keys(users).length}
                     onChoose={handleChooseOption} />
             }

@@ -41,7 +41,7 @@ export default function App() {
           }
         />
         <Route
-          path="new"
+          path="add"
           element={
             <Suspense fallback={<>...</>}>
               <NewPage />

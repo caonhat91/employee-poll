@@ -14,7 +14,7 @@ export default function Nav({ className }: { className: string }) {
             text: "Leaderboard"
         },
         {
-            to: "/new",
+            to: "/add",
             text: "New"
         },
     ]);

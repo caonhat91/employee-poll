@@ -17,7 +17,7 @@ const usersSlice = createSlice({
     },
 });;
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+export const fetchUsers = createAsyncThunk<Users>('users/fetchUsers', async () => {
     const users = await _getUsers();
     return users;
 });

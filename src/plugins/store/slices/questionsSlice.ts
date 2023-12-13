@@ -1,6 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { _getQuestions, _saveQuestion, _saveQuestionAnswer } from '../../api/_DATA';
-import { fetchUsers } from './usersSlice';
+import { Users, fetchUsers } from './usersSlice';
+import { AppDispatch, RootState } from '..';
+import { saveAnswers } from './userSlice';
 
 export type Question = {
     id: string,
@@ -32,7 +34,7 @@ const questionsSlice = createSlice({
     },
 });;
 
-export const fetchQuestions = createAsyncThunk('questions/fetchQuestions', async () => {
+export const fetchQuestions = createAsyncThunk<Questions, void, {}>('questions/fetchQuestions', async () => {
     return await _getQuestions();
 });
 
@@ -59,10 +61,19 @@ export function createQuestion(newQuestion: NewQuestion) {
 }
 
 export function answerQuestion(answerQuestion: AnswerQuestion) {
-    return function (dispatch: any) {
-        _saveQuestionAnswer(answerQuestion).then(() => {
-            dispatch(fetchQuestions());
-            dispatch(fetchUsers());
+    return async function (dispatch: AppDispatch, getState: () => RootState) {
+        await _saveQuestionAnswer(answerQuestion);
+        dispatch(fetchQuestions());
+        return dispatch(fetchUsers()).then((res): asserts res is PayloadAction<Users, string, {
+            arg: void;
+            requestId: string;
+            requestStatus: "fulfilled";
+        }, never> => {
+            if (res.meta.requestStatus !== 'fulfilled') {
+                return;
+            }
+            const newUser = (res.payload as Users)[getState().user.id];
+            dispatch(saveAnswers(newUser.answers));
         });
     }
 }

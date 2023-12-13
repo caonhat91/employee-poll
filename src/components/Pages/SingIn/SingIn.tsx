@@ -1,39 +1,37 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import UserList from "../../Molecules/UserList";
 import LoginForm, { LoginType } from "../../Organisms/LoginForm";
 import { User, login } from "../../../plugins/store/slices/userSlice";
-import { getUser } from "../../../plugins/store/reducers";
-import { useEffect } from "react";
+import { AppDispatch } from "../../../plugins/store";
 import { useNavigate } from "react-router-dom";
+import { fetchQuestions } from "../../../plugins/store/slices/questionsSlice";
+import { PayloadAction } from "@reduxjs/toolkit";
 import css from "./SignIn.module.scss";
 
 export default function SingIn() {
-    const dispatch = useDispatch();
-    const user = useSelector(getUser);
+    const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleSubmit = (frm: LoginType) => {
-        dispatch(login(frm) as any);
+        dispatch(login(frm)).then((res): asserts res is PayloadAction<User, string, {
+            arg: {
+                username: string;
+                password: string;
+            };
+            requestId: string;
+            requestStatus: "fulfilled";
+        }, never> => {
+            dispatch(fetchQuestions());
+            navigate('/', { replace: true });
+        });
     }
-
-    const handleClick = (user: User) => {
-        handleSubmit({ username: user.id, password: user.password });
-    }
-
-    useEffect(() => {
-        if (!Object.keys(user).length) {
-            return;
-        }
-
-        navigate('/', { replace: true });
-    }, [user, navigate]);
 
     return (
         <div className={css['signin-page']}>
             <div className={css['head']}>employee poll</div>
             <div className={css['wrapper']}>
                 <LoginForm submit={handleSubmit} />
-                <UserList click={handleClick} />
+                <UserList click={(user) => handleSubmit({ username: user.id, password: user.password })} />
             </div>
         </div>
     );

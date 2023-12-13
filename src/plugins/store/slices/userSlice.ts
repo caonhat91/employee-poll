@@ -15,7 +15,11 @@ export type User = {
 const userSlice = createSlice({
     name: 'user',
     initialState: {} as User,
-    reducers: {},
+    reducers: {
+        saveAnswers(state, action) {
+            state.answers = { ...state.answers, ...action.payload };
+        }
+    },
     extraReducers(builder) {
         builder
             .addCase(login.fulfilled, (state, action) => {
@@ -43,5 +47,7 @@ export const logout = createAsyncThunk<boolean, void>(
         setTimeout(() => resolve(true), 1000);
     })
 );
+
+export const { saveAnswers } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { getUsers } from "../../plugins/store/reducers";
+import { getUsers } from "../../plugins/store";
 import { User } from "../../plugins/store/slices/userSlice";
-import "./UserList.scss";
 import Avatar from "../Atoms/Avatar";
+import "./UserList.scss";
 
 export default function UserList({ click }: { click: (user: User) => void }) {
     const users = useSelector(getUsers);

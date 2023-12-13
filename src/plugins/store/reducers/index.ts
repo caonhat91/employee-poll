@@ -9,14 +9,4 @@ const rootReducer = combineReducers({
     questions: questionsSlice
 });
 
-export type StateType = ReturnType<typeof rootReducer>;
-
-export const getUsers = (state: StateType) => state.users;
-
-export const getUsersLength = (state: StateType) => Object.keys(state.users).length;
-
-export const getUser = (state: StateType) => state.user;
-
-export const getQuestions = (state: StateType) => state.questions;
-
 export default rootReducer;

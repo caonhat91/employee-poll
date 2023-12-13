@@ -1,3 +1,4 @@
+import { formatDate } from "../../utils/date.format";
 import "./Poll.scss";
 
 export type PollType = {
@@ -7,9 +8,7 @@ export type PollType = {
     onView: (id: string) => void
 }
 export default function Poll({ id, title, timestamp, onView }: PollType) {
-    const timeDisplay: string = new Intl.DateTimeFormat('en-US', {
-        year: 'numeric', month: '2-digit', day: '2-digit'
-    }).format(new Date(timestamp));
+    const timeDisplay: string = formatDate(timestamp);
 
     return (
         <li className="poll">

@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../plugins/store/slices/userSlice";
-import Avatar from "../Atoms/Avatar";
-import { getUser } from "../../plugins/store/reducers";
-import Nav from "../Molecules/Nav";
-import "./Navigator.scss"
-import Popup from "../Molecules/Popup";
+import { AppDispatch, getUser } from "../../plugins/store";
 import { createPortal } from "react-dom";
 import { useState } from "react";
+import Nav from "../Molecules/Nav";
 import AvatarGroup from "../Molecules/AvatarGroup";
+import Popup from "../Molecules/Popup";
+import "./Navigator.scss"
 
 export default function Navigator() {
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const user = useSelector(getUser);
     const [isOpen, setIsOpen] = useState<boolean>(false);
 

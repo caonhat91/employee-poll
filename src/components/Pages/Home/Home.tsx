@@ -1,20 +1,13 @@
-import { useEffect } from "react";
 import PollShell from "../../Templates/PollShelf";
-import { fetchQuestions } from "../../../plugins/store/slices/questionsSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { getQuestions, getUser } from "../../../plugins/store/reducers";
-import "./Home.scss"
+import { useSelector } from "react-redux";
+import { getQuestions, getUser } from "../../../plugins/store";
 import { useNavigate } from "react-router-dom";
+import "./Home.scss"
 
 export default function Home() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
     const questions = useSelector(getQuestions);
     const user = useSelector(getUser);
-
-    useEffect(() => {
-        dispatch(fetchQuestions() as any);
-    }, [dispatch]);
 
     const answered = Object.keys(questions).filter(question => Object.keys(user.answers).includes(question))
         .map(id => questions[id]);

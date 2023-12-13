@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Table from "../../Molecules/Table";
 import "./Leaderboard.scss"
-import { getUsers } from "../../../plugins/store/reducers";
+import { getUsers } from "../../../plugins/store";
 import AvatarGroup from "../../Molecules/AvatarGroup";
 
 export default function Leaderboard() {

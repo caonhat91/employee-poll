@@ -1,13 +1,13 @@
 import { FormEvent, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../../../plugins/store/reducers";
+import { AppDispatch, getUser } from "../../../plugins/store";
 import { NewQuestion, createQuestion } from "../../../plugins/store/slices/questionsSlice";
-import "./New.scss";
 import { useNavigate } from "react-router-dom";
+import "./New.scss";
 
 export default function New() {
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const user = useSelector(getUser);
     const title = "Would you rather";
 

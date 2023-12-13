@@ -49,11 +49,11 @@
      - [x] The polls in both categories are arranged from the most recently created (top) to the least recently created (bottom).
 3. *Are the details of each poll displayed with all of the relevant information?*
      - [x] The details of the poll are available at `questions/:question_id`
-     - [x] When a poll is clicked on the home page, the following is shown:
+     - When a poll is clicked on the home page, the following is shown:
        - [x] the text “Would You Rather”
        - [x] the avatar of the user who posted the polling question
        - [x] the two options
-     - [x] For answered polls, each of the two options contains the following:
+     - For answered polls, each of the two options contains the following:
        - [x] the text of the option;
        - [x] the number of people who voted for that option;
        - [x] the percentage of people who voted for that option;
@@ -63,8 +63,8 @@
 4. *Does the voting mechanism work correctly?*
      - [x] Upon voting in a poll, all of the information of the answered poll is displayed.
      - [x] The user’s response is recorded and is clearly visible on the poll details page.
-     - [ ] When the user comes back to the home page, the polling question appears in the “Answered” column.
-     - [ ] The voting mechanism works correctly, and the data on the leaderboard changes appropriately.
+     - [x] When the user comes back to the home page, the polling question appears in the “Answered” column.
+     - [x] The voting mechanism works correctly, and the data on the leaderboard changes appropriately.
 5. *Can users add new polls?*
      - [x] The form is available at `/add`.
      - [x] The application shows the text “Would You Rather” and has a form for creating two options.
@@ -72,7 +72,7 @@
      - [x] The new polling question appears in the correct category on the home page.
 6. *Does the leaderboard work correctly and have the desired functionality?*
      - [x] The Leaderboard is available at `/leaderboard`.
-     - [x] Each entry on the leaderboard contains the following:
+     - Each entry on the leaderboard contains the following:
        - [x] the user’s name;
        - [x] the user’s avatar;
        - [x] the number of questions the user asked;
@@ -92,17 +92,17 @@
 
 1. *Does the store serve as the application’s single source of truth?*
    - [x] The store is the application’s source of truth.
-   - [ ] Components read the necessary state from the store; they do not have their own versions of the same state.
-   - [ ] There are no direct API calls in the components' lifecycle methods.
+   - [x] Components read the necessary state from the store; they do not have their own versions of the same state.
+   - [x] There are no direct API calls in the components' lifecycle methods.
 2. *Is application state managed by Redux?*
-   - [ ] Most application state is managed by the Redux store. State-based props are mapped from the store rather than stored as component state.
+   - [x] Most application state is managed by the Redux store. State-based props are mapped from the store rather than stored as component state.
    - [x] Form inputs and controlled components may have some state handled by the component.
 3. *Does application state update correctly?*
-   - [ ] Updates are triggered by dispatching action creators to reducers.
-   - [ ] Reducers and actions are written properly and correctly return updated state to the store.
+   - [x] Updates are triggered by dispatching action creators to reducers.
+   - [x] Reducers and actions are written properly and correctly return updated state to the store.
 4. *Does the architecture of the application make sense?*
-   - [ ] The code is structured and organized in a logical way.
-   - [ ] Components are modular and reusable.
+   - [x] The code is structured and organized in a logical way.
+   - [x] Components are modular and reusable.
 
 
 ### Unit Testing
@@ -115,16 +115,16 @@
 2. *Can all the unit test be run by entering the `npm start test` command?*
    - [x] The application requires only npm start test in order to run all the unit tests in the project.
 3. *Do all the unit tests pass?*
-   - [ ] After running npm start test, all unit tests should pass. There should be no failing tests.
+   - [x] After running npm start test, all unit tests should pass. There should be no failing tests.
 4. *Are there at least 10 unit tests?*
    - The project requires a minimum of 10 passing unit tests.
      - You will also be expected to write at least ten unit tests for the project. The first six should be the following:
-       - [ ] For the _DATA.js file, write an async unit test for _saveQuestion to verify that the saved question is returned and all expected fields are populated when correctly formatted data is passed to the function.
-       - [ ] For the _DATA.js file, write an async unit test for _saveQuestion to verify that an error is returned if incorrect data is passed to the function.
-       - [ ] For the _DATA.js file, write an async unit test for _saveQuestionAnswer to verify that the saved question answer is returned and all expected fields are populated when correctly formatted data is passed to the function.
-       - [ ] For the _DATA.js file, write an async unit test for _saveQuestionAnswer to verify that an error is returned if incorrect data is passed to the function.
+       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestion` to verify that the saved question is returned and all expected fields are populated when correctly formatted data is passed to the function.
+       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestion` to verify that an error is returned if incorrect data is passed to the function.
+       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestionAnswer` to verify that the saved question answer is returned and all expected fields are populated when correctly formatted data is passed to the function.
+       - [ ] For the `_DATA.js` file, write an async unit test for `_saveQuestionAnswer` to verify that an error is returned if incorrect data is passed to the function.
        - [ ] Write a snapshot test for at least one file.
-       - [ ] Write a DOM test for at least one file which uses the fireEvent function. For example use fireEvent.click() for clicking a button and verifying that something changed in a component or fireEvent.change() to add text to an input field or select an option in a dropdown. After doing this, verify the UI changed in some way using the expect() method from jest.
+       - [ ] Write a DOM test for at least one file which uses the fireEvent function. For example use `fireEvent.click()` for clicking a button and verifying that something changed in a component or `fireEvent.change()` to add text to an input field or select an option in a dropdown. After doing this, verify the UI changed in some way using the `expect()` method from jest.
      - The remaining four unit tests can be to verify any function or component you are writing for this project. Here are some ideas:
        - [ ] On the login page, verify that a user name field, password field, and submit button are present on the page.
        - [ ] Verify that a user entering an incorrect username or password and clicking submit will see an error on the page.

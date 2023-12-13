@@ -74,16 +74,16 @@
                 box-shadow: 0px 0px 12px var(--red);
             }
         }
+    }
+}
 
-        .error {
-            color: var(--red);
-            animation: fade 300ms linear;
+.error {
+    color: var(--red);
+    animation: fade 300ms linear;
 
-            @keyframes fade {
-                0% {
-                    opacity: 0;
-                }
-            }
+    @keyframes fade {
+        0% {
+            opacity: 0;
         }
     }
 }

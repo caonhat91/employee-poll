@@ -7,7 +7,7 @@ export type LoginType = {
     password: string
 };
 
-export default function LoginForm({ submit }: { submit: (_: LoginType) => void }) {
+export default function LoginForm({ submit, error }: { submit: (_: LoginType) => void, error?: string }) {
 
     const [frm, setFrm] = useState<LoginType>({
         username: '',
@@ -49,6 +49,7 @@ export default function LoginForm({ submit }: { submit: (_: LoginType) => void }
     return (
         <div className="login-page">
             <h1 className="h1">Login</h1>
+            {error && <small className="error">{error}</small>}
             <form className="form" noValidate autoComplete="false" onSubmit={handleSubmit}>
                 <div className="control">
                     <label htmlFor="username">Username:</label>

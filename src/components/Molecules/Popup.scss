@@ -11,6 +11,8 @@
     border: 1px solid var(--blue-grotto);
     border-radius: 0.5rem;
     box-shadow: 0px 0px 8px var(--blue-grotto);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);;
 
     transition: 300ms;
 

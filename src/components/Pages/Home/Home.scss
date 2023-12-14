@@ -1,22 +1,13 @@
 .home-page {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 
-    .cycle {
-        position: absolute;
-        width: 350px;
-        height: 350px;
-        background: linear-gradient(180deg, #D4F1F4 0%, #FFFFFF 100%);
-        filter: blur(60px);
-
-        &--right {
-            right: 0;
-            top: 100px;
-            transform: rotate(-20deg);
-        }
-
-        &--left {
-            left: -51px;
-            top: 560px;
-        }
+    .switch-mode {
+        position: fixed;
+        top: calc(64px + 1rem);
+        right: 1rem;
+        min-width: 180px;
     }
 }

@@ -9,7 +9,7 @@ import Avatar from "../../Atoms/Avatar";
 import "./PollDetail.scss";
 
 export default function PollDetail() {
-    const param = useParams();
+    const { questionId } = useParams();
     const navigate = useNavigate();
     const dispatch: AppDispatch = useDispatch();
     const user = useSelector(getUser);
@@ -22,14 +22,21 @@ export default function PollDetail() {
     const [creator, setCreator] = useState<User | undefined>();
 
     useEffect(() => {
-        const id: string = param["question_id"] ?? '';
-        const answers = user.answers[id];
-        setIsAnswer(typeof answers === 'string');
-        const question = questions[id];
+        if (typeof questionId === 'undefined') {
+            return;
+        }
+        console.log('dddd', questions, questionId)
+        const question = questions[questionId];
+        if (typeof question === 'undefined') {
+            navigate("/404");
+            return;
+        }
         setQuestion(question);
         const userCreator = users[question.author];
         setCreator(userCreator);
-    }, [param, user, questions, users]);
+        const answers = user.answers[questionId];
+        setIsAnswer(typeof answers === 'string');
+    }, [questionId, user, questions, users, navigate]);
 
     function handleChooseOption(answer: string) {
         if (!question || disabled === true) {

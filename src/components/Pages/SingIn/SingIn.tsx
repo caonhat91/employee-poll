@@ -4,11 +4,12 @@ import LoginForm, { LoginType } from "../../Organisms/LoginForm";
 import { login } from "../../../plugins/store/slices/userSlice";
 import { AppDispatch } from "../../../plugins/store";
 import { useNavigate } from "react-router-dom";
-import { fetchQuestions } from "../../../plugins/store/slices/questionsSlice";
+import { Questions, fetchQuestions } from "../../../plugins/store/slices/questionsSlice";
 import css from "./SignIn.module.scss";
 import { useState } from "react";
+import { PayloadAction } from "@reduxjs/toolkit";
 
-export default function SingIn() {
+export default function SingIn({ prevRouter = "/" }: { prevRouter?: string }) {
     const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
     const [error, setError] = useState<string>();
@@ -17,8 +18,14 @@ export default function SingIn() {
         dispatch(login(frm)).then((res) => {
             switch (res.meta.requestStatus) {
                 case "fulfilled":
-                    dispatch(fetchQuestions());
-                    navigate('/', { replace: true });
+                    dispatch(fetchQuestions()).then((res): asserts res is PayloadAction<Questions, string, {
+                        arg: void;
+                        requestId: string;
+                        requestStatus: "fulfilled";
+                    }, never> => {
+                        navigate(prevRouter, { replace: true });
+                        console.debug('prevRouter', prevRouter)
+                    });
                     break;
                 case "rejected":
                     const { error: { message } } = res as any;

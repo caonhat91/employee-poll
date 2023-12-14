@@ -1,25 +1,31 @@
-import { Routes, Route } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect, useState } from 'react';
 
 import Layout from './components/Templates/Layout';
 import NoMatch from './components/Templates/NoMatch';
 import Auth from './components/Templates/Auth';
+import SingIn from './components/Pages/SingIn/SingIn';
 
 const HomePage = lazy(() => import('./components/Pages/Home/Home'));
 const LeaderboardPage = lazy(() => import('./components/Pages/Leaderboard/Leaderboard'));
 const NewPage = lazy(() => import('./components/Pages/New/New'));
-const SingInPage = lazy(() => import('./components/Pages/SingIn/SingIn'));
 const PollDetailPage = lazy(() => import('./components/Pages/PollDetail/PollDetail'));
 
 export default function App() {
+  const location = useLocation();
+  const [prevUrl, setPrevUrl] = useState<string>();
+
+  useEffect(() => {
+    setPrevUrl(location.pathname);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Routes>
       <Route
         path="login"
         element={
-          <Suspense fallback={<>...</>}>
-            <SingInPage />
-          </Suspense>
+          <SingIn prevRouter={prevUrl} />
         }
       />
       <Route path='/' id='root' element={
@@ -49,7 +55,7 @@ export default function App() {
           }
         />
         <Route
-          path="questions/:question_id"
+          path="questions/:questionId"
           element={
             <Suspense fallback={<>...</>}>
               <PollDetailPage />

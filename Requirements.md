@@ -58,8 +58,8 @@
        - [x] the number of people who voted for that option;
        - [x] the percentage of people who voted for that option;
      - [x] The option selected by the logged in user should be clearly marked.
-     - [ ] When the user is logged in, the details of the poll are shown. If the user is logged out, he/she is asked to log in before before being able to access the poll.
-     - [ ] The application asks the user to sign in and shows a 404 page if that poll does not exist. (In other words, if a user creates a poll and then the same or another user tries to access that poll by its url, the user should be asked to sign in and then be shown a 404 page. Please keep in mind that new polls will not be accessible at their url because of the way the backend is set up in this application.)
+     - [x] When the user is logged in, the details of the poll are shown. If the user is logged out, he/she is asked to log in before before being able to access the poll.
+     - [x] The application asks the user to sign in and shows a 404 page if that poll does not exist. (In other words, if a user creates a poll and then the same or another user tries to access that poll by its url, the user should be asked to sign in and then be shown a 404 page. Please keep in mind that new polls will not be accessible at their url because of the way the backend is set up in this application.)
 4. *Does the voting mechanism work correctly?*
      - [x] Upon voting in a poll, all of the information of the answered poll is displayed.
      - [x] The user’s response is recorded and is clearly visible on the poll details page.
